@@ -10,7 +10,7 @@ export default function NavbarComponent() {
     <>
     <Navbar expand="lg" className="bg-secondary">
       <Container>
-        <Navbar.Brand href="home">Valli dell'energia pulita</Navbar.Brand>
+        <Navbar.Brand href="home">Valli dell&apos;energia pulita</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
