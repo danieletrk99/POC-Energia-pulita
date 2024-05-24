@@ -1,0 +1,15 @@
+.map {
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+}
+
+.flex50 {
+    max-width: 50%;
+}
+
+.column25{
+    display: flex;
+    max-width: 25%;
+}
