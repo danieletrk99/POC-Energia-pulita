@@ -4,15 +4,16 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import style from '../_lib/styles/home.module.css';
 
 
 
 export default function NavbarComponent() {
   return (
     <>
-    <Navbar expand="lg" className="bg-secondary">
+    <Navbar expand="lg" className={style.navbarcustom}>
       <Container>
-        <Navbar.Brand href="home">Valli dell&apos;energia pulita</Navbar.Brand>
+        <Navbar.Brand href="../home">Valli dell&apos;energia pulita</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
