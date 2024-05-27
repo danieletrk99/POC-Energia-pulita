@@ -1,7 +1,8 @@
-import { Map, View } from "ol"
-import { OSM, XYZ } from "ol/source"
+'use client'
+
 import MapComponent from '../../components/Map/map'
 import style from '../../_lib/styles/home.module.css';
+import MapboxMap from '../../components/Map/mapboxmap';
 
 
 export default function Percorso({params} : {
@@ -12,12 +13,18 @@ export default function Percorso({params} : {
 {
     return(
         <>
-        <div className={style.column25}>
+        <div>
             <p>Percorso n° {params.percorsoId}</p>
         </div>
-        <div className={style.flex50}>
+        <div className={style.flex100}>
+            <p>Leaflet map</p>
             <MapComponent />
         </div>
+        <div className={style.flex50}>        
+            <p>Mapboxmap</p>
+            <MapboxMap />
+        </div>
+
         </>
     )
 }
