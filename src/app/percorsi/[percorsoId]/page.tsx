@@ -2,7 +2,8 @@
 
 import MapComponent from '../../components/Map/map'
 import style from '../../_lib/styles/home.module.css';
-import MapboxMap from '../../components/Map/mapboxmap';
+//import MapboxMap from '../../components/Map/mapboxmap';
+import OutdoorComponent from '../../components/Map/outdooractive';
 
 
 export default function Percorso({params} : {
@@ -15,14 +16,11 @@ export default function Percorso({params} : {
         <>
         <div>
             <p>Percorso n° {params.percorsoId}</p>
-        </div>
-        <div className={style.flex100}>
-            <p>Leaflet map</p>
-            <MapComponent />
-        </div>
-        <div className={style.flex50}>        
-            <p>Mapboxmap</p>
-            <MapboxMap />
+            <div className="w-25">
+                <OutdoorComponent params={{
+                        percorsoId: params.percorsoId
+                    }} />
+            </div>
         </div>
 
         </>

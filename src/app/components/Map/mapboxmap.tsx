@@ -1,10 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
+'use client';
 
+import { useEffect, useRef, useState } from 'react';
 var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 var jsonMap = require ('./mygeodata_merged.json');
 import style from '../../_lib/styles/home.module.css';
 
 
+/*
 const MapboxMap= () => {
     const ref = useRef(null);
     const [map, setMap] = useState(null);
@@ -34,8 +36,8 @@ const MapboxMap= () => {
                     'line-cap': 'round'
                 },
                 'paint': {
-                    'line-color': '#000000',
-                    'line-width': 6
+                    'line-color': '#003554',
+                    'line-width': 3.5
                 }
             });
             map.addControl(new mapboxgl.NavigationControl());
@@ -47,11 +49,16 @@ const MapboxMap= () => {
         }
     }, [ref, map]);
 
+   //   
     return(
+        <>      
+            
         <div
         className={style.map} ref={ref}
         />
+        </>
+
     );
 }
 
-export default MapboxMap;
+export default MapboxMap;*/
