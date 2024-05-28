@@ -1,28 +1,20 @@
 'use client'
-
-import MapComponent from '../../components/Map/map'
-import style from '../../_lib/styles/home.module.css';
-//import MapboxMap from '../../components/Map/mapboxmap';
-import OutdoorComponent from '../../components/Map/outdooractive';
+import OutdoorComponent from '@/app/components/Map/outdoor';
 
 
-export default function Percorso({params} : {
+export default function PercorsoDetails({params} : {
     params: {
         percorsoId: string,
     }
 })
 {
+    const id : string = params.percorsoId;
     return(
         <>
-        <div>
-            <p>Percorso n° {params.percorsoId}</p>
-            <div className="w-25">
-                <OutdoorComponent params={{
-                        percorsoId: params.percorsoId
-                    }} />
-            </div>
+        <div id="map-comp">            
+            <p>Percorso n° {id}</p>
+            <OutdoorComponent id={id}/>
         </div>
-
         </>
     )
 }

@@ -1,18 +1,18 @@
+'use client'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Suspense } from 'react';
-import Loading from './loading';
 import { percorsi } from '../_lib/styles/percorsi-array';
 import Link from 'next/link';
+import { useEffect } from 'react';
 
 export default function Percorsi(){
+
         return(
             <>
             <h1>Percorsi disponibili:</h1>
-            <Suspense fallback={<Loading />}>
                 <ul className="list-group w-25 rouded-top rounded-bottom">
                     {arrayPercorsi}
                 </ul>
-            </Suspense>
             </>
         )
 }
