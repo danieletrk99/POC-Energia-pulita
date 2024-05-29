@@ -1,5 +1,8 @@
 'use client'
-import OutdoorComponent from '@/app/components/Map/outdoor';
+
+import { useRouter } from 'next/navigation';
+import Script from 'next/script';
+import { useEffect } from 'react';
 
 
 export default function PercorsoDetails({params} : {
@@ -8,13 +11,22 @@ export default function PercorsoDetails({params} : {
     }
 })
 {
+    const router = useRouter();
     const id : string = params.percorsoId;
     return(
-        <>
-        <div id="map-comp">            
+
+        <>           
             <p>Percorso n° {id}</p>
-            <OutdoorComponent id={id}/>
-        </div>
+            {map(id)}
         </>
-    )
+    );
 }
+
+export function map(id: string){
+    const outdoorActivityCallUrl = `https://www.outdooractive.com/it/embed/${id}/js?mw=false`;
+    return(
+            <Script id="outdoor-activity-script" type="text/javascript" strategy="lazyOnload" src={outdoorActivityCallUrl}/>
+    );  
+}
+
+//<OutdoorComponent id={id}/>

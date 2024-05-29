@@ -1,11 +1,11 @@
 'use client'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { percorsi } from '../_lib/styles/percorsi-array';
+import { percorsi } from '../_lib/utils/percorsi-array';
 import Link from 'next/link';
-import { useEffect } from 'react';
 
-export default function Percorsi(){
+
+export default function Percorsi(){  
 
         return(
             <>
@@ -20,7 +20,7 @@ export default function Percorsi(){
 const arrayPercorsi = percorsi.map((item, index) => {
     return(
     <li key={index}>
-        <Link href={`/percorsi/${item}`} className="list-group-item list-group-item-action">{item}</Link>
+        <Link href={`/percorso/${item}`} className="list-group-item list-group-item-action">{item}</Link>
     </li>
     )
 })
