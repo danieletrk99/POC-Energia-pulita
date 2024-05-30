@@ -20,7 +20,7 @@ export default function Percorsi(){
 const arrayPercorsi = percorsi.map((item, index) => {
     return(
     <li key={index}>
-        <Link href={`/percorso/${item}`} className="list-group-item list-group-item-action">{item}</Link>
+        <Link href={`/percorsi/${item}`} className="list-group-item list-group-item-action">{item}</Link>
     </li>
     )
 })
