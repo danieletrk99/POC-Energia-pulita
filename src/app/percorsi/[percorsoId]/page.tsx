@@ -14,6 +14,11 @@ export default function PercorsoDetails({params} : {
     const divRef = useRef<HTMLDivElement>(null);
     const container = divRef.current!;
     useEffect(() => {
+
+        const existingScript = container.querySelector('script[data-external-script]');
+        if (existingScript) {
+            container.removeChild(existingScript);
+        }
         const script = document.createElement('script');
         script.src = outdoorActivityCallUrl;
         script.async = true;
