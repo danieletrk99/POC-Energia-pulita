@@ -12,26 +12,26 @@ export default function PercorsoDetails({params} : {
     const id : string = params.percorsoId;
     const outdoorActivityCallUrl = `https://www.outdooractive.com/it/embed/${id}/js?mw=false`;
     const divRef = useRef<HTMLDivElement>(null);
-    const container = divRef.current!;
+    //TODO: fix script appearing twice in the page
     useEffect(() => {
-
-        const existingScript = container.querySelector('script[data-external-script]');
-        if (existingScript) {
-            container.removeChild(existingScript);
+        const container = divRef.current;
+        if(container && !container.querySelector('script')){
+            const script = document.createElement('script');
+            script.src = outdoorActivityCallUrl;
+            script.async = true;
+            container.appendChild(script);        
+            
+            return() => {
+                if(container.contains(script)){
+                    container.removeChild(script); 
+                }
+            }
         }
-        const script = document.createElement('script');
-        script.src = outdoorActivityCallUrl;
-        script.async = true;
-        container.appendChild(script);
-
-        return() => {
-            container.removeChild(script); 
-        }
-    }, [outdoorActivityCallUrl, container])
-
+    }, [outdoorActivityCallUrl]);
+    
     return(
             <div ref={divRef}>
-            <p>Percorso n° {id}</p>
+                <p>Percorso n° {id}</p>
             </div>
     );
 }
